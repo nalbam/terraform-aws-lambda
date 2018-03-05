@@ -22,9 +22,9 @@ resource "aws_lambda_function" "default" {
   role = "${aws_iam_role.default.arn}"
 
   depends_on = [
-    "aws_s3_bucket_object.default",
     "aws_iam_role.default",
-    "aws_iam_role_policy.default"
+    "aws_iam_role_policy.default",
+    "aws_s3_bucket_object.default",
   ]
 
   environment {
