@@ -16,6 +16,26 @@ variable description {
   default = ""
 }
 
+variable "runtime" {
+  //default = ""
+  description = ""
+}
+
+variable "handler" {
+  //default = ""
+  description = ""
+}
+
+variable "memory_size" {
+  default = "512"
+  description = ""
+}
+
+variable "timeout" {
+  default = "5"
+  description = ""
+}
+
 variable "bucket" {
   //default = ""
   description = ""
@@ -23,5 +43,11 @@ variable "bucket" {
 
 variable "package" {
   //default = ""
+  description = ""
+}
+
+variable "variables" {
+  type = "map"
+  default = {}
   description = ""
 }

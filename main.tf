@@ -1,4 +1,4 @@
-# Lambda Function : sns > lambda > slack
+# Lambda Function
 
 resource "aws_s3_bucket_object" "default" {
   bucket = "${var.bucket}"
@@ -8,20 +8,24 @@ resource "aws_s3_bucket_object" "default" {
 
 resource "aws_lambda_function" "default" {
   function_name = "${var.name}-${var.stage}"
-  description = "sns > lambda > slack"
+  description = "${var.description}"
 
   s3_bucket = "${var.bucket}"
   s3_key = "${var.package}"
 
-  runtime = "nodejs6.10"
-  handler = "index.handler"
+  runtime = "${var.runtime}"
+  handler = "${var.handler}"
 
-  memory_size = 512
-  timeout = 5
+  memory_size = "${var.memory_size}"
+  timeout = "${var.timeout}"
 
   role = "${aws_iam_role.default.arn}"
 
   depends_on = [
     "aws_iam_role.default"
   ]
+
+  environment {
+    variables = "${var.variables}"
+  }
 }
