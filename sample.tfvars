@@ -6,3 +6,7 @@ handler = "index.handler"
 
 bucket = "sample"
 package = "sample"
+
+env_vars = {
+  SAMPLE = "sample"
+}

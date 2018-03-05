@@ -28,6 +28,6 @@ resource "aws_lambda_function" "default" {
   ]
 
   environment {
-    variables = "${var.variables}"
+    variables = "${var.env_vars}"
   }
 }

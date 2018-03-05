@@ -49,7 +49,7 @@ variable "package" {
   description = "The S3 key of an object containing the function's deployment package."
 }
 
-variable "variables" {
+variable "env_vars" {
   type = "map"
   default = {}
   description = "A map that defines environment variables for the Lambda function."
