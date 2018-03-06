@@ -1,5 +1,12 @@
-runtime = "sample"
-handler = "sample"
+name = "demo"
+stage = "dev"
 
-bucket = "sample"
-package = "sample"
+runtime = "nodejs6.10"
+handler = "index.handler"
+
+s3_bucket = "sample"
+s3_key = "sample"
+
+env_vars = {
+  SAMPLE = "sample"
+}

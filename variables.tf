@@ -39,17 +39,17 @@ variable "timeout" {
   description = "The amount of time your Lambda Function has to run in seconds."
 }
 
-variable "bucket" {
+variable "s3_bucket" {
   //default = ""
   description = "The S3 bucket location containing the function's deployment package."
 }
 
-variable "package" {
+variable "s3_key" {
   //default = ""
   description = "The S3 key of an object containing the function's deployment package."
 }
 
-variable "variables" {
+variable "env_vars" {
   type = "map"
   default = {}
   description = "A map that defines environment variables for the Lambda function."
