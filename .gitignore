@@ -19,6 +19,7 @@ $RECYCLE.BIN/
 .terraform.tfstate.lock.info
 terraform.tfstate.backup
 terraform.tfstate
+terraform.tfplan
 
 # Maven
 target/
