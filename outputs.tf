@@ -1,7 +1,7 @@
-output "lambda_function_arn" {
+output "arn" {
   value = "${aws_lambda_function.default.arn}"
 }
 
-output "lambda_function_invoke_arn" {
+output "invoke_arn" {
   value = "${aws_lambda_function.default.invoke_arn}"
 }
