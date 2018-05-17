@@ -37,6 +37,10 @@ data "aws_iam_policy_document" "lambda-policy" {
       "s3:ListBucket",
       "s3:GetObject",
       "s3:PutObject",
+      "s3:PutObjectAcl",
+      "s3:PutObjectTagging",
+      "s3:PutObjectVersionAcl",
+      "s3:PutObjectVersionTagging",
       "s3:DeleteObject"
     ]
     resources = [
