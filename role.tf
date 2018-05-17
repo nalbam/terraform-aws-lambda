@@ -22,6 +22,16 @@ data "aws_iam_policy_document" "lambda-policy" {
   statement {
     sid = ""
     actions = [
+      "lambda:InvokeFunction"
+    ]
+    resources = [
+      "arn:aws:lambda:*"
+    ]
+    effect = "Allow"
+  }
+  statement {
+    sid = ""
+    actions = [
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents"
