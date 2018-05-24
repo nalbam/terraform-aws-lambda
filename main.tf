@@ -2,8 +2,8 @@
 
 resource "aws_s3_bucket_object" "default" {
   bucket = "${var.s3_bucket}"
-  key = "${var.s3_key}"
   source = "${var.s3_key}"
+  key = "${var.s3_key}"
 }
 
 resource "aws_lambda_function" "default" {
