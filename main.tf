@@ -2,7 +2,7 @@
 
 resource "aws_s3_bucket_object" "default" {
   bucket = "${var.s3_bucket}"
-  source = "${var.s3_key}"
+  source = "${var.s3_source == "" ? var.s3_key : var.s3_source}"
   key = "${var.s3_key}"
 }
 
