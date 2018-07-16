@@ -3,21 +3,21 @@
 resource "aws_s3_bucket_object" "default" {
   bucket = "${var.s3_bucket}"
   source = "${var.s3_source == "" ? var.s3_key : var.s3_source}"
-  key = "${var.s3_key}"
+  key    = "${var.s3_key}"
 }
 
 resource "aws_lambda_function" "default" {
   function_name = "${var.name}-${var.stage}"
-  description = "${var.description}"
+  description   = "${var.description}"
 
   s3_bucket = "${var.s3_bucket}"
-  s3_key = "${var.s3_key}"
+  s3_key    = "${var.s3_key}"
 
   runtime = "${var.runtime}"
   handler = "${var.handler}"
 
   memory_size = "${var.memory_size}"
-  timeout = "${var.timeout}"
+  timeout     = "${var.timeout}"
 
   role = "${aws_iam_role.default.arn}"
 
