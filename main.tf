@@ -7,7 +7,7 @@ resource "aws_s3_bucket_object" "default" {
 }
 
 resource "aws_lambda_function" "default" {
-  function_name = "${var.name}-${var.stage}"
+  function_name = "${var.stage}-${var.name}"
   description   = "${var.description}"
 
   s3_bucket = "${var.s3_bucket}"
