@@ -74,12 +74,12 @@ data "aws_iam_policy_document" "lambda-policy" {
 }
 
 resource "aws_iam_role" "default" {
-  name = "terraform-${var.name}-${var.stage}-lambda-role-${var.region}"
+  name = "terraform-${var.stage}-${var.name}-lambda-role-${var.region}"
   assume_role_policy = "${data.aws_iam_policy_document.lambda-role.json}"
 }
 
 resource "aws_iam_role_policy" "default" {
-  name = "terraform-${var.name}-${var.stage}-lambda-policy-${var.region}"
+  name = "terraform-${var.stage}-${var.name}-lambda-policy-${var.region}"
   role = "${aws_iam_role.default.id}"
   policy = "${data.aws_iam_policy_document.lambda-policy.json}"
 }
