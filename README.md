@@ -1,7 +1,8 @@
 # terraform-aws-lambda
 
 ## usage
-```
+
+```hcl
 module "lambda" {
   source = "git::https://github.com/nalbam/terraform-aws-lambda.git"
   region = "ap-northeast-2"
